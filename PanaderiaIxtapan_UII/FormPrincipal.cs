@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using BLL;
 using Entidades;
-using PanaderiaIxtapan_UI;
+using PanaderiaIxtapan_UII;
 
 namespace PanaderiaIxtapan_UII
 {
@@ -18,7 +18,46 @@ namespace PanaderiaIxtapan_UII
         public FormPrincipal()
         {
             InitializeComponent();
-            ThemeManager.AplicarEstiloYCentrar(this, "Menu - Panadería Ixtapan");
+            // ── TEMA VISUAL ──────────────────────────────────────────────────
+
+            // 1. Aplicar tema global a TODOS los controles del formulario
+            ThemeManager.AplicarTema(this);
+            this.Text = "Sistema Contable — Panadería Ixtapan";
+
+            // 2. SOBREESCRIBIR colores de botones específicos
+            //    (la detección automática falla en 'btnEliminarInventari' porque
+            //     ese botón en realidad EDITA, no elimina — nombre heredado del diseñador)
+            ThemeManager.EstilizarBoton(btnAgregarInventario, ThemeManager.TipoBoton.Exito);
+            ThemeManager.EstilizarBoton(btnEliminarInventari, ThemeManager.TipoBoton.Secundario);  // Botón EDITAR
+            ThemeManager.EstilizarBoton(btnEliminarInventario, ThemeManager.TipoBoton.Peligro);
+
+            // 3. Encabezados de sección sobre cada DataGridView
+            ThemeManager.AgregarEncabezadoSeccion(this, "CATÁLOGO DE CUENTAS",
+                dgvCuentas.Left, dgvCuentas.Top - 24);
+
+            ThemeManager.AgregarEncabezadoSeccion(this, "GESTIÓN DE INVENTARIO",
+                dgvInventario.Left, dgvInventario.Top - 24);
+
+            // 4. Panel blanco detrás del área de formulario de inventario
+            Panel pnlFormInv = new Panel
+            {
+                BackColor = ThemeManager.ColorSuperficie,
+                Location = new Point(0, dgvInventario.Bottom + 4),
+                Size = new Size(this.ClientSize.Width, this.ClientSize.Height - dgvInventario.Bottom - 4),
+                Padding = new Padding(6)
+            };
+            this.Controls.Add(pnlFormInv);
+            pnlFormInv.SendToBack();
+
+            // 5. Ajustar fuentes de los Labels de campo (etiquetas pequeñas)
+            foreach (Control c in this.Controls)
+            {
+                if (c is Label lbl && c != null)
+                {
+                    lbl.Font = ThemeManager.FuenteLabel;
+                    lbl.ForeColor = ThemeManager.ColorTextoSecundario;
+                }
+            }
         }
 
         private void dgvCuentas_CellContentClick(object sender, DataGridViewCellEventArgs e)

@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using PanaderiaIxtapan_UI;
+using PanaderiaIxtapan_UII;
 
 namespace PanaderiaIxtapan_UII
 {
@@ -16,7 +16,34 @@ namespace PanaderiaIxtapan_UII
         public FormLibroDiario()
         {
             InitializeComponent();
-            ThemeManager.AplicarEstiloYCentrar(this, "Libro Diario - Panadería Ixtapan");
+            
+
+            // ── TEMA VISUAL ──────────────────────────────────────────────────
+
+            ThemeManager.AplicarTema(this);
+            this.Text = "Libro Diario";
+
+            // Encabezado de sección
+            ThemeManager.AgregarEncabezadoSeccion(this, "LIBRO DIARIO — Consulta y Edición",
+                dgvLibroDiario.Left, 8);
+
+            // El grid empieza con un poco más de espacio para el encabezado
+            dgvLibroDiario.Top = 32;
+
+            // Sobreescribir botones con sus roles correctos
+            ThemeManager.EstilizarBoton(btnActualizar, ThemeManager.TipoBoton.Secundario);
+            ThemeManager.EstilizarBoton(btnEditar, ThemeManager.TipoBoton.Primario);
+
+            // Panel blanco para la zona de edición inferior
+            Panel pnlEdicion = new Panel
+            {
+                BackColor = ThemeManager.ColorSuperficie,
+                Location = new Point(0, dgvLibroDiario.Bottom + 4),
+                Size = new Size(this.ClientSize.Width,
+                                     this.ClientSize.Height - dgvLibroDiario.Bottom - 4)
+            };
+            this.Controls.Add(pnlEdicion);
+            pnlEdicion.SendToBack();
         }
 
         private void FormLibroDiario_Load(object sender, EventArgs e)

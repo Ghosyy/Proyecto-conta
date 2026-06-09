@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using PanaderiaIxtapan_UI;
+using PanaderiaIxtapan_UII;
 
 namespace PanaderiaIxtapan_UII
 {
@@ -16,7 +16,20 @@ namespace PanaderiaIxtapan_UII
         public FormEstadosFinancieros()
         {
             InitializeComponent();
-            ThemeManager.AplicarEstiloYCentrar(this, "Estados Financieros - Panadería Ixtapan");
+            // ── TEMA VISUAL ──────────────────────────────────────────────────
+
+            ThemeManager.AplicarTema(this);
+            this.Text = "Estados Financieros";
+
+            // Estilizar el TabControl con pestañas dibujadas a mano
+            // (esto suscribe el evento DrawItem internamente — no debes hacer nada más)
+            ThemeManager.EstilizarTabControl(tabControl1);
+
+            // Fondo blanco para el contenido de cada pestaña
+            tabPage1.BackColor = ThemeManager.ColorSuperficie;
+            tabPage2.BackColor = ThemeManager.ColorSuperficie;
+            tabPage1.Padding = new Padding(6);
+            tabPage2.Padding = new Padding(6);
         }
 
         private void FormEstadosFinancieros_Load(object sender, EventArgs e)

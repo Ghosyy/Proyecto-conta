@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using PanaderiaIxtapan_UI;
+using PanaderiaIxtapan_UII;
 
 namespace PanaderiaIxtapan_UII
 {
@@ -16,7 +16,12 @@ namespace PanaderiaIxtapan_UII
         public FormLibroMayor()
         {
             InitializeComponent();
-            ThemeManager.AplicarEstiloYCentrar(this, "Libro Mayor - Panadería Ixtapan");
+            // ── TEMA VISUAL ──────────────────────────────────────────────────
+            ThemeManager.AplicarTema(this);
+            this.Text = "Libro Mayor";
+            ThemeManager.AgregarEncabezadoSeccion(this, "LIBRO MAYOR — Saldos por Cuenta",
+                dgvLibroMayor.Left, 8);
+            dgvLibroMayor.Top = 32;
         }
 
         private void FormLibroMayor_Load(object sender, EventArgs e)

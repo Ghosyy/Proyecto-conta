@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Entidades;
 using BLL;
-using PanaderiaIxtapan_UI;
+using PanaderiaIxtapan_UII;
 
 namespace PanaderiaIxtapan_UII
 {
@@ -20,7 +20,29 @@ namespace PanaderiaIxtapan_UII
         public FormPartidas()
         {
             InitializeComponent();
-            ThemeManager.AplicarEstiloYCentrar(this, "Registrar Partidas - Panadería Ixtapan");
+            ThemeManager.AplicarTema(this);
+            this.Text = "Registrar Nueva Partida Contable";
+
+            // Botones con sus roles correctos
+            ThemeManager.EstilizarBoton(btnAgregarFila, ThemeManager.TipoBoton.Primario);
+            ThemeManager.EstilizarBoton(btnGuardarPartida, ThemeManager.TipoBoton.Exito);
+            ThemeManager.EstilizarBoton(btnGenerarIVA, ThemeManager.TipoBoton.Secundario);
+
+            // Labels de totales — hacerlos destacar visualmente
+            lblTotalDebe.Font = ThemeManager.FuenteTotal;
+            lblTotalDebe.ForeColor = ThemeManager.ColorExito;
+            lblTotalHaber.Font = ThemeManager.FuenteTotal;
+            lblTotalHaber.ForeColor = ThemeManager.ColorPrimario;
+
+            // Panel blanco para la zona superior (inputs)
+            Panel pnlInputs = new Panel
+            {
+                BackColor = ThemeManager.ColorSuperficie,
+                Location = new Point(0, 0),
+                Size = new Size(this.ClientSize.Width, dgvDetallePartida.Top - 4)
+            };
+            this.Controls.Add(pnlInputs);
+            pnlInputs.SendToBack();
         }
 
         private void FormPartidas_Load(object sender, EventArgs e)

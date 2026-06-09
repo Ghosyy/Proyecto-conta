@@ -35,11 +35,11 @@
             this.registrarNuevaPartidaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reportesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.libroDiarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.libroMayorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.estadosFinancierosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cierreMensualToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.regularizaciónDeIVAToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ejecutarCierreMensualToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.libroMayorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.estadosFinancierosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.txtSku = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.txtDescripcion = new System.Windows.Forms.TextBox();
@@ -63,18 +63,18 @@
             // dgvCuentas
             // 
             this.dgvCuentas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvCuentas.Location = new System.Drawing.Point(12, 27);
+            this.dgvCuentas.Location = new System.Drawing.Point(12, 46);
             this.dgvCuentas.Name = "dgvCuentas";
-            this.dgvCuentas.Size = new System.Drawing.Size(368, 400);
+            this.dgvCuentas.Size = new System.Drawing.Size(528, 400);
             this.dgvCuentas.TabIndex = 0;
             this.dgvCuentas.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCuentas_CellContentClick);
             // 
             // dgvInventario
             // 
             this.dgvInventario.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvInventario.Location = new System.Drawing.Point(410, 27);
+            this.dgvInventario.Location = new System.Drawing.Point(546, 46);
             this.dgvInventario.Name = "dgvInventario";
-            this.dgvInventario.Size = new System.Drawing.Size(480, 400);
+            this.dgvInventario.Size = new System.Drawing.Size(463, 400);
             this.dgvInventario.TabIndex = 1;
             this.dgvInventario.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvInventario_CellClick);
             this.dgvInventario.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvInventario_CellContentClick);
@@ -87,7 +87,7 @@
             this.cierreMensualToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(911, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(1158, 24);
             this.menuStrip1.TabIndex = 2;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -119,9 +119,23 @@
             // libroDiarioToolStripMenuItem
             // 
             this.libroDiarioToolStripMenuItem.Name = "libroDiarioToolStripMenuItem";
-            this.libroDiarioToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.libroDiarioToolStripMenuItem.Size = new System.Drawing.Size(175, 22);
             this.libroDiarioToolStripMenuItem.Text = "Libro Diario";
             this.libroDiarioToolStripMenuItem.Click += new System.EventHandler(this.libroDiarioToolStripMenuItem_Click);
+            // 
+            // libroMayorToolStripMenuItem
+            // 
+            this.libroMayorToolStripMenuItem.Name = "libroMayorToolStripMenuItem";
+            this.libroMayorToolStripMenuItem.Size = new System.Drawing.Size(175, 22);
+            this.libroMayorToolStripMenuItem.Text = "Libro Mayor";
+            this.libroMayorToolStripMenuItem.Click += new System.EventHandler(this.libroMayorToolStripMenuItem_Click);
+            // 
+            // estadosFinancierosToolStripMenuItem
+            // 
+            this.estadosFinancierosToolStripMenuItem.Name = "estadosFinancierosToolStripMenuItem";
+            this.estadosFinancierosToolStripMenuItem.Size = new System.Drawing.Size(175, 22);
+            this.estadosFinancierosToolStripMenuItem.Text = "Estados financieros";
+            this.estadosFinancierosToolStripMenuItem.Click += new System.EventHandler(this.estadosFinancierosToolStripMenuItem_Click);
             // 
             // cierreMensualToolStripMenuItem
             // 
@@ -145,20 +159,6 @@
             this.ejecutarCierreMensualToolStripMenuItem.Size = new System.Drawing.Size(196, 22);
             this.ejecutarCierreMensualToolStripMenuItem.Text = "Ejecutar cierre mensual";
             this.ejecutarCierreMensualToolStripMenuItem.Click += new System.EventHandler(this.ejecutarCierreMensualToolStripMenuItem_Click);
-            // 
-            // libroMayorToolStripMenuItem
-            // 
-            this.libroMayorToolStripMenuItem.Name = "libroMayorToolStripMenuItem";
-            this.libroMayorToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.libroMayorToolStripMenuItem.Text = "Libro Mayor";
-            this.libroMayorToolStripMenuItem.Click += new System.EventHandler(this.libroMayorToolStripMenuItem_Click);
-            // 
-            // estadosFinancierosToolStripMenuItem
-            // 
-            this.estadosFinancierosToolStripMenuItem.Name = "estadosFinancierosToolStripMenuItem";
-            this.estadosFinancierosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.estadosFinancierosToolStripMenuItem.Text = "Estados financieros";
-            this.estadosFinancierosToolStripMenuItem.Click += new System.EventHandler(this.estadosFinancierosToolStripMenuItem_Click);
             // 
             // txtSku
             // 
@@ -262,9 +262,9 @@
             // 
             // btnAgregarInventario
             // 
-            this.btnAgregarInventario.Location = new System.Drawing.Point(457, 515);
+            this.btnAgregarInventario.Location = new System.Drawing.Point(588, 459);
             this.btnAgregarInventario.Name = "btnAgregarInventario";
-            this.btnAgregarInventario.Size = new System.Drawing.Size(112, 23);
+            this.btnAgregarInventario.Size = new System.Drawing.Size(163, 23);
             this.btnAgregarInventario.TabIndex = 15;
             this.btnAgregarInventario.Text = "Agregar al inventario";
             this.btnAgregarInventario.UseVisualStyleBackColor = true;
@@ -272,9 +272,9 @@
             // 
             // btnEliminarInventario
             // 
-            this.btnEliminarInventario.Location = new System.Drawing.Point(724, 516);
+            this.btnEliminarInventario.Location = new System.Drawing.Point(580, 521);
             this.btnEliminarInventario.Name = "btnEliminarInventario";
-            this.btnEliminarInventario.Size = new System.Drawing.Size(148, 23);
+            this.btnEliminarInventario.Size = new System.Drawing.Size(184, 23);
             this.btnEliminarInventario.TabIndex = 16;
             this.btnEliminarInventario.Text = "Eliminar algo del inventario";
             this.btnEliminarInventario.UseVisualStyleBackColor = true;
@@ -282,9 +282,9 @@
             // 
             // btnEliminarInventari
             // 
-            this.btnEliminarInventari.Location = new System.Drawing.Point(596, 515);
+            this.btnEliminarInventari.Location = new System.Drawing.Point(580, 492);
             this.btnEliminarInventari.Name = "btnEliminarInventari";
-            this.btnEliminarInventari.Size = new System.Drawing.Size(113, 23);
+            this.btnEliminarInventari.Size = new System.Drawing.Size(171, 23);
             this.btnEliminarInventari.TabIndex = 17;
             this.btnEliminarInventari.Text = "Editar inventario";
             this.btnEliminarInventari.UseVisualStyleBackColor = true;
@@ -294,7 +294,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(911, 569);
+            this.ClientSize = new System.Drawing.Size(1158, 569);
             this.Controls.Add(this.btnEliminarInventari);
             this.Controls.Add(this.btnEliminarInventario);
             this.Controls.Add(this.btnAgregarInventario);

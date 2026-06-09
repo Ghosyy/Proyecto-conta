@@ -54,9 +54,9 @@
             // 
             // btnEditar
             // 
-            this.btnEditar.Location = new System.Drawing.Point(433, 465);
+            this.btnEditar.Location = new System.Drawing.Point(562, 512);
             this.btnEditar.Name = "btnEditar";
-            this.btnEditar.Size = new System.Drawing.Size(75, 23);
+            this.btnEditar.Size = new System.Drawing.Size(10, 10);
             this.btnEditar.TabIndex = 1;
             this.btnEditar.Text = "Editar";
             this.btnEditar.UseVisualStyleBackColor = true;
@@ -129,9 +129,9 @@
             // 
             // btnActualizar
             // 
-            this.btnActualizar.Location = new System.Drawing.Point(433, 502);
+            this.btnActualizar.Location = new System.Drawing.Point(418, 491);
             this.btnActualizar.Name = "btnActualizar";
-            this.btnActualizar.Size = new System.Drawing.Size(75, 23);
+            this.btnActualizar.Size = new System.Drawing.Size(165, 23);
             this.btnActualizar.TabIndex = 10;
             this.btnActualizar.Text = "Actualizar monto";
             this.btnActualizar.UseVisualStyleBackColor = true;

@@ -46,6 +46,7 @@
             this.cmbTipoFactura = new System.Windows.Forms.ComboBox();
             this.txtTotalFactura = new System.Windows.Forms.TextBox();
             this.btnGenerarIVA = new System.Windows.Forms.Button();
+            this.label4 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDetallePartida)).BeginInit();
             this.SuspendLayout();
             // 
@@ -58,7 +59,7 @@
             // 
             // txtConcepto
             // 
-            this.txtConcepto.Location = new System.Drawing.Point(234, 12);
+            this.txtConcepto.Location = new System.Drawing.Point(234, 11);
             this.txtConcepto.Name = "txtConcepto";
             this.txtConcepto.Size = new System.Drawing.Size(288, 20);
             this.txtConcepto.TabIndex = 1;
@@ -201,15 +202,25 @@
             this.btnGenerarIVA.Name = "btnGenerarIVA";
             this.btnGenerarIVA.Size = new System.Drawing.Size(75, 23);
             this.btnGenerarIVA.TabIndex = 17;
-            this.btnGenerarIVA.Text = "button1";
+            this.btnGenerarIVA.Text = "Aplicar";
             this.btnGenerarIVA.UseVisualStyleBackColor = true;
             this.btnGenerarIVA.Click += new System.EventHandler(this.btnGenerarIVA_Click);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(562, 135);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(59, 13);
+            this.label4.TabIndex = 18;
+            this.label4.Text = "Aplicar IVA";
             // 
             // FormPartidas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 578);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.btnGenerarIVA);
             this.Controls.Add(this.txtTotalFactura);
             this.Controls.Add(this.cmbTipoFactura);
@@ -257,5 +268,6 @@
         private System.Windows.Forms.ComboBox cmbTipoFactura;
         private System.Windows.Forms.TextBox txtTotalFactura;
         private System.Windows.Forms.Button btnGenerarIVA;
+        private System.Windows.Forms.Label label4;
     }
 }
